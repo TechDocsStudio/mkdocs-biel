@@ -52,6 +52,10 @@ plugins:
 
 Set `enable: false` to turn the widget off without removing the configuration.
 
+### Theme keyboard shortcuts
+
+Some themes, including Material for MkDocs, register global keyboard shortcuts (`f`, `s`, `/`, `p`, `n`) that fire while typing inside the Biel.ai widget. The plugin fixes this automatically: keystrokes inside the widget are scoped to it, and theme shortcuts keep working everywhere else on the page. Set `theme_shortcuts_fix: false` to opt out.
+
 ## Get started
 
 See the [MkDocs AI chatbot integration guide](https://docs.biel.ai/installation/mkdocs) for the full list of options and setup instructions.

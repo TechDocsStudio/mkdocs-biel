@@ -16,6 +16,7 @@ log = logging.getLogger("mkdocs.plugins.biel")
 DEFAULT_OPTIONS = {
     "enable": True,
     "version": "latest",
+    "theme_shortcuts_fix": True,
     # biel-button
     "project": None,
     "button_position": "bottom-right",
@@ -89,7 +90,27 @@ DEFAULT_OPTIONS = {
 }
 
 # Options that configure the plugin itself rather than the <biel-button> element.
-NON_ATTRIBUTE_OPTIONS = ("enable", "version", "button_text")
+NON_ATTRIBUTE_OPTIONS = ("enable", "version", "button_text", "theme_shortcuts_fix")
+
+# Themes like Material for MkDocs register global keyboard shortcuts (f, s, /,
+# p, n) that fire while the user types inside Biel's shadow DOM, because the
+# retargeted event doesn't look editable to the theme. Stop propagation at the
+# document only for keystrokes originating inside a Biel component, so theme
+# shortcuts keep working everywhere else.
+THEME_SHORTCUTS_FIX = """\
+<script>
+document.addEventListener('keydown', function (e) {
+  var path = e.composedPath ? e.composedPath() : [];
+  for (var i = 0; i < path.length; i++) {
+    var tag = path[i].tagName;
+    if (tag && tag.toLowerCase().indexOf('biel-') === 0) {
+      e.stopPropagation();
+      return;
+    }
+  }
+});
+</script>
+"""
 
 
 def _snake_to_kebab(string):
@@ -148,6 +169,8 @@ class BielPlugin(BasePlugin):
 
         button_text = escape(str(self.config.get("button_text") or "Ask AI"))
         button = f'<biel-button {" ".join(attributes)}>{button_text}</biel-button>\n'
+        if self.config.get("theme_shortcuts_fix"):
+            button += THEME_SHORTCUTS_FIX
 
         if "</head>" in output:
             output = output.replace("</head>", head_tags + "</head>", 1)
