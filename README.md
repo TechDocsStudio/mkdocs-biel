@@ -4,7 +4,7 @@ AI assistant plugin for MkDocs sites, with an **Ask AI** button powered by [Biel
 
 ![AI assistant MkDocs](https://docs.biel.ai/assets/images/biel-widget-docs-bd28548cf26a37bcb7c496487280bbfe.png)
 
-Add an AI assistant to your MkDocs documentation using Biel.ai's plugin. The integration works with any MkDocs theme, including Material for MkDocs, and embeds the Ask AI button. Configure the documentation search widget separately. No template overrides needed.
+Add an AI assistant to your MkDocs documentation using Biel.ai's plugin. The integration works with any MkDocs theme, including Material for MkDocs, and embeds the Ask AI button without template overrides. Configure the documentation search widget separately.
 
 *Note: A Biel.ai plan is required to use this plugin. Try it free for 14 days—no credit card required.*
 
