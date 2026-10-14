@@ -1,17 +1,18 @@
-# AI chatbot plugin for MkDocs
+# AI assistant plugin for MkDocs
 
-Ask AI chatbot plugin for MkDocs sites, powered by [Biel.ai](https://biel.ai).
+AI assistant plugin for MkDocs sites, with an **Ask AI** button powered by [Biel.ai](https://biel.ai).
 
-![AI chatbot MkDocs](https://docs.biel.ai/assets/images/biel-widget-docs-bd28548cf26a37bcb7c496487280bbfe.png)
+![AI assistant MkDocs](https://docs.biel.ai/assets/images/biel-widget-docs-bd28548cf26a37bcb7c496487280bbfe.png)
 
-Add an AI chatbot to your MkDocs documentation using Biel.ai's plugin. The integration works with any MkDocs theme, including Material for MkDocs, and adds both chat and search capabilities. No template overrides needed.
+Add an AI assistant to your MkDocs documentation using Biel.ai's plugin. The integration works with any MkDocs theme, including Material for MkDocs, and embeds the Ask AI button without template overrides. Configure the documentation search widget separately.
 
 *Note: A Biel.ai plan is required to use this plugin. Try it free for 14 days—no credit card required.*
 
 ## Key features
 
-- AI chatbot that provides instant responses to documentation queries.
-- AI search engine for quick and relevant information retrieval.
+- **Ask AI** button that opens an AI assistant to answer questions from your documentation.
+- **Documentation search** to find matching pages from indexed docs with a separately configured search widget.
+- Connect menu to link the same indexed docs to Claude Code, Codex, and other compatible AI clients via [Biel.ai's hosted MCP server](https://docs.biel.ai/integrations/mcp-server).
 - Integration with MkDocs, no `custom_dir` or template overrides required.
 - Customizable to match your site's branding and user needs.
 
@@ -58,7 +59,7 @@ Some themes, including Material for MkDocs, register global keyboard shortcuts (
 
 ## Get started
 
-See the [MkDocs AI chatbot integration guide](https://docs.biel.ai/installation/mkdocs) for the full list of options and setup instructions.
+See the [MkDocs AI assistant integration guide](https://docs.biel.ai/installation/mkdocs) for the full list of options and setup instructions.
 
 ## Support
 
