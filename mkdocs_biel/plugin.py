@@ -143,7 +143,7 @@ class BielPlugin(BasePlugin):
         return config
 
     def on_post_page(self, output, page, config):
-        if not self.config.get("enable"):
+        if not self.config.get("enable") or page.meta.get("exclude-biel") is True:
             return output
 
         version = self.config.get("version") or "latest"

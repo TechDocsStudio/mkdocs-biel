@@ -53,6 +53,24 @@ plugins:
 
 Set `enable: false` to turn the widget off without removing the configuration.
 
+### Exclude individual pages
+
+Requires `mkdocs-biel` 0.1.2 or later.
+
+Add `exclude-biel: true` to the YAML front matter of each Markdown page you want to exclude:
+
+```markdown
+---
+exclude-biel: true
+---
+
+# Welcome
+```
+
+Rebuild your site. The plugin skips its CSS, JavaScript, floating button, and keyboard handler on that page. Apply the same condition to any Biel components added through template overrides. See the [page exclusion guide](https://docs.biel.ai/installation/mkdocs#exclude-individual-pages) for the search template example.
+
+On Material for MkDocs, disable `navigation.instant` when navigating between included and excluded pages in the same site. Full page loads apply each page's exclusion setting.
+
 ### Theme keyboard shortcuts
 
 Some themes, including Material for MkDocs, register global keyboard shortcuts (`f`, `s`, `/`, `p`, `n`) that fire while typing inside the Biel.ai widget. The plugin fixes this automatically: keystrokes inside the widget are scoped to it, and theme shortcuts keep working everywhere else on the page. Set `theme_shortcuts_fix: false` to opt out.
